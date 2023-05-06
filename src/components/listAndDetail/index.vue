@@ -48,18 +48,15 @@ import { reactive, ref } from 'vue';
   /**
    * @desc 点击title
    */
-  const handleClick = (index) => {
-    currentData.value = newData[index];
-  }
+  const handleClick = (index) => { currentData.value = newData[index];}
 
   /**
    * @desc 隐藏当前项
    */
   const handleHidden = () => {
-    let index = newData.findIndex((item) => {
-      return item.id === currentData.value.id;
-    })
+    let index = newData.findIndex(item => item.id === currentData.value.id)
     newData.splice(index, 1);
+
     currentData.value = {};
   }
 
